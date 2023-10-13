@@ -14,6 +14,7 @@ const Cadastrar = () => {
 
     const onSubmit = async (values) => {
         values.ranking = 0
+        values.pontuacao = 0
         await blogFetch.post("/cad-competidor", values).then((res) => setId(res.data._id))
         // values.linkQR = `http://localhost:4000/site-card-vite/${id}`
     }
@@ -31,9 +32,23 @@ const Cadastrar = () => {
 
                 <section className="item-form">
                     <label htmlFor="">
+                        Instagram
+                    </label>
+                    <input required type="text" name="instagram" placeholder="instagram" {...register("instagram")} />
+                </section>
+
+                <section className="item-form">
+                    <label htmlFor="">
                         Equipe
                     </label>
                     <input required type="text" name="equipe" placeholder="Equipe" {...register("equipe")} />
+                </section>
+
+                <section className="item-form">
+                    <label htmlFor="">
+                        Link Equipe
+                    </label>
+                    <input required type="text" name="linkGifEquipe" placeholder="linkGifEquipe" {...register("linkGifEquipe")} />
                 </section>
 
                 <section className="item-form">

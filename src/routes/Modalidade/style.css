@@ -1,0 +1,15 @@
+.arena-espec{
+    margin: auto;
+    width: 90vw;
+    height: 70vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 450px){
+    .arena-espec{
+        height: 100vh;
+    }
+}

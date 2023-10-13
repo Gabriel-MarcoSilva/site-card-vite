@@ -22,7 +22,6 @@ const EditCompetidor = () => {
     }, [])
 
     const onSubmit = async (values) => {
-        console.log(values)
         await axios.put(`${baseURL}/edit-competidor/${idParam.id}`, values).then((res) => setId(res.data._id))
         // values.linkQR = `http://localhost:4000/site-card-vite/${id}`
     }

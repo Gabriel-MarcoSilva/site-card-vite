@@ -1,10 +1,10 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import axios from "axios"
 import { baseURL } from "../../../assets/axios/config";
 
-import "./style.css"
+// import "./style.css"
 
-const MegaSumoTelao = ({ competidores, vencedor }) => {
+const MiniSumoTelao = ({ competidores, vencedor }) => {
 
     const [acabou, setAcabou] = useState(false)
 
@@ -12,13 +12,11 @@ const MegaSumoTelao = ({ competidores, vencedor }) => {
     const [comp, setComp] = useState([])
 
     useEffect(() =>{
-        axios.get(`${baseURL}/round`).then(res => setComp(res.data))
-        axios.get(`${baseURL}/vitoria`).then(res => setVenc(res.data))
+        axios.get(`${baseURL}/round-mini`).then(res => setComp(res.data))
+        axios.get(`${baseURL}/vitoria-mini`).then(res => setVenc(res.data))
     },[])
 
     useEffect(() => {
-
-        console.log()
 
         if(comp.length > venc.length){
             setAcabou(false)
@@ -39,7 +37,7 @@ const MegaSumoTelao = ({ competidores, vencedor }) => {
                         <section id="container-sumo" key={vencedor[0] !== undefined ? item.comp._id : ""}>
                             <section className="mini-card-telao" >
                                 <section className="header">
-                                    {/* <p>{item.comp.ranking}</p> */}
+                                    <p>{item.comp.ranking}</p> 
                                     <h5>{vencedor[0] !== undefined ? item.comp.nomeCompetidor : ""}</h5>
                                 </section>
 
@@ -66,10 +64,10 @@ const MegaSumoTelao = ({ competidores, vencedor }) => {
                 })
             ) : (
                 competidores.map((item) => {
-                    cont++
+                    cont ++
                     return (
                         <>
-                             <section id="container-sumo" key={item._id}>
+                            <section id="container-sumo" key={item._id}>
                                 <section className="mini-card-telao" >
                                     <section className="header">
                                         <p>{item.ranking}</p>
@@ -93,7 +91,6 @@ const MegaSumoTelao = ({ competidores, vencedor }) => {
                             </section>
                             {cont <= 1 ? "VS"  : "" }
                         </>
-
                     )
                 })
             )}
@@ -102,4 +99,4 @@ const MegaSumoTelao = ({ competidores, vencedor }) => {
     )
 }
 
-export default MegaSumoTelao
+export default MiniSumoTelao

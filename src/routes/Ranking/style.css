@@ -1,0 +1,22 @@
+#table-ranking{
+    width: 90vw;
+    height: 90vh;
+    overflow-y: auto;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 20pt;
+}
+
+#table-ranking hr{
+    margin-bottom: 10px;
+}
+
+#table-ranking h2{
+    margin-bottom: 2px;
+}
+
+.itens-ranking{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

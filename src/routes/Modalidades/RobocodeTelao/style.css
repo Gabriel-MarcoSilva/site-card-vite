@@ -1,0 +1,37 @@
+.container-robocode{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-cards-robocode{
+    display: flex;
+}
+
+.container-cards-robocode #container-sumo{
+    flex-direction: column-reverse;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.player{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-cards-robocode #container-image-mega-sumo{
+    width: 70px;
+    height: 70px;
+}
+
+@media (max-width: 450px) {
+    .container-robocode{
+        flex-direction: column;
+    }
+}

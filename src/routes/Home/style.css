@@ -1,8 +1,8 @@
 #continer-cards{
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     justify-content: space-evenly;
 }
 
@@ -78,14 +78,34 @@
     height: 70px;
 }
 
+#table-home{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#table-home h2{
+    font-size: 25pt;
+}
+
 @media (max-width: 450px){
+
+    .robo img{
+        border: 2px solid #0580F2;
+        box-shadow: 0 0 25px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: -105px;
+        width: 130px;
+        height: 130px;
+    }
     #card{
         height: 80%;
         width: 100%;
     }
 
     h5{
-        font-size: 20pt;
+        font-size: 25pt;
     }
 
     .competidor{
@@ -96,6 +116,10 @@
         align-items: center;
         justify-content: center;
         margin: auto;
+    }
+
+    .content{
+        font-size: 17pt;
     }
     
     .competidor div{

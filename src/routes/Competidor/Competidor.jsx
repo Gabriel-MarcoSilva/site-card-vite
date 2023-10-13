@@ -20,30 +20,60 @@ const Competidor = () => {
 
     return (
         <div className="container-card container-card-comp">
-            <section key={id} id="card">
-                <section className="header">
-                    <p>{item.ranking}</p>
-                    <h5>{item.nomeCompetidor}</h5>
-                </section>
-
-                <section className="competidor">
-                    <div style={{ backgroundImage: `url(${item.linkGif})`, backgroundSize: "contain", width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} > </div>
-                </section>
-                <section className="robo">
-                    <img src={item.linkRobo} />
-                </section>
-                <section className="body">
-                    <section className="content">
-                        <p><b>Equipe:</b> <span>{item.equipe}</span></p>
-                        <p><b>Modalidade:</b> <span>{item.modalidade}</span></p>
-                        <p><b>Instituição:</b> <span>{item.instituicao}</span></p>
+            <section style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <h3>{item.nomeCompetidor}</h3>
+                <section id="competidor" style={{ width: "50vh" }}>
+                    <img src={item.linkGif} alt="" />
+                    <section id="info-competidor">
+                        <p><span>Instituição: </span>{item.instituicao}</p>
+                        <hr />
+                        <p><span>Ranking: </span>{item.ranking}</p>
+                        <hr />
+                        <p><span>{item.modalidade == "Follow Line" ? "Melhor Tempo: " : "Pontuação"}</span>{item.modalidade == "Follow Line" ? Math.floor(item.pontuacao / 100) + ":" + item.pontuacao % 100 + "s" : item.pontuacao}</p>
+                        <hr />
+                        <p><span>Modalidade: </span>{item.modalidade}</p>
                     </section>
                 </section>
             </section>
 
-            <section className="competidor">
-                <QRCode value={`${baseURL}/${id}`} id="qr-code-comp" />
+            <hr />
+
+            <section id="competidor" className="equipe">
+
+                <section>
+                    <h3 style={{ fontFamily: "sans-serif", fontWeight: "normal" }}> <span style={{ fontWeight: "bold" }}>Equipe:</span>  {item.equipe}</h3>
+                    {item.linkGifEquipe ? <img src={item.linkGifEquipe} /> : ""}
+                    {item.linkRobo ? <img src={item.linkRobo} /> : ""}
+                </section>
+
+                <section>
+                    <h3 style={{ fontFamily: "sans-serif", fontWeight: "normal" }}> <span style={{ fontWeight: "bold" }}>Robô:</span>  {item.nomeRobo}</h3>
+                    {item.linkRobo ? <img src={item.linkRobo} /> : ""}
+                </section>
+
             </section>
+
+            <hr />
+            {/*
+            <section id="competidor">
+                
+            </section>
+*/}
+            <hr />
+
+            <section className="qrcodes">
+                <section id="competidor">
+                    <h3 style={{ fontFamily: "sans-serif", fontWeight: "normal" }}> <span style={{ fontWeight: "bold" }}>meu card:</span></h3>
+                    <QRCode value={`${baseURL}/${id}`} id="qr-code-comp" />
+                </section>
+
+                <section id="competidor">
+                    <h3 style={{ fontFamily: "sans-serif", fontWeight: "normal" }}> <span style={{ fontWeight: "bold" }}>Instagram:</span>  </h3>
+                    <QRCode value={`${item.instagram}`} id="qr-code-comp" />
+                </section>
+
+            </section>
+
         </div>
     )
 }

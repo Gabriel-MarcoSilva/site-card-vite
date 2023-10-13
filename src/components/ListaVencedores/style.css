@@ -1,0 +1,16 @@
+.table{
+    display: flex;
+    width: 50vh;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 10pt;
+}
+
+.resultado{
+    display: grid;
+    width: 90%;
+    grid-template-columns: 55% 45%;
+    margin: 0 auto;
+}

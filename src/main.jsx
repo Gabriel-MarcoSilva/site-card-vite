@@ -15,6 +15,7 @@ import Batle from './routes/Batle'
 import Modalidade from './routes/Modalidade'
 import CadBatle from './routes/CadBatle'
 import Editbatle from './routes/EditBatle'
+import Ranking from './routes/Ranking'
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/site-card-vite/batle/:modalidade/editar",
         element: <Editbatle />
+      },
+      {
+        path: "/site-card-vite/ranking",
+        element: <Ranking />
       }
     ]
   }
